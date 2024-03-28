@@ -1,8 +1,8 @@
 import _ from "lodash";
 import "./style.css";
 
-import { HashMap } from "../hashmap";
-import { hashFactory } from "../hashmap";
+import { HashMap, HashSet } from "../hashmap";
+import { hashFactory, hashSetFactory } from "../hashmap";
 
 // Create HashMap
 hashFactory();
@@ -61,3 +61,9 @@ console.log(HashMap.values());
 // ex: [[firstKey, firstValue], [secondKey, secondValue]]
 console.log(HashMap.entries()); 
 
+// Extra Credit
+// HashSet that only contains keys, no values.
+hashSetFactory();
+HashSet.set('Odin');
+HashSet.set('Donald');
+console.log(HashSet.set('Jack'));

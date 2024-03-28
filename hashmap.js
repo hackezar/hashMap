@@ -14,6 +14,25 @@ export const HashMap = {
     entries: entries
 }
 
+export const HashSet = {
+    buckets: new Set(),
+    hash: hash,
+    set: value => HashSet.buckets.add(value),
+    get: get,
+    has: has,
+    remove: remove,
+    length: length,
+    clear: clear,
+    keys: keys,
+    values: values,
+    entries: entries
+
+}
+
+export function hashSetFactory() {
+    return Object.create(HashSet);
+}
+
 export function hashFactory() {
     return Object.create(HashMap);
 }
