@@ -4,7 +4,14 @@ export const HashMap = {
     buckets: new Map(),
     hash: hash,
     set: set,
-    get: get
+    get: get,
+    has: has,
+    remove: remove,
+    length: length,
+    clear: clear,
+    keys: keys,
+    values: values,
+    entries: entries
 }
 
 export function hashFactory() {
@@ -41,4 +48,39 @@ function get(key) {
         console.log('Key Not Found')
         return null;
     }
+}
+
+function has(key) {
+    let hashKey = hash(key);
+    return HashMap.buckets.has(hashKey); 
+}
+
+function remove(key) {
+    let hashKey = hash(key);
+    if (HashMap.buckets.has(hashKey) == true) {
+        HashMap.buckets.delete(hashKey);
+        return true;
+    } else 
+        return false;
+}
+
+function length() {
+    return HashMap.buckets.size
+}
+
+function clear() {
+    return HashMap.buckets.clear();
+    
+}
+
+function keys() {
+    return HashMap.buckets.keys();
+}
+
+function values() {
+    return HashMap.buckets.values();
+}
+
+function entries() {
+    return HashMap.buckets.entries();
 }
